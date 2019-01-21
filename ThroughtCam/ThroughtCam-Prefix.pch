@@ -1,0 +1,39 @@
+//
+// Prefix header for all source files of the 'ThroughtCam' target in the 'ThroughtCam' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #define iPhone (!IS_IPAD)
+    #define IS_IPAD (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone)
+    #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+    #define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )
+    #define isFourInch ([UIScreen mainScreen].bounds.size.height > 480)
+    #define IS_IPHONE_5 ( IS_IPHONE && IS_WIDESCREEN )
+
+    #define WIDTH [UIScreen mainScreen].bounds.size.width
+    #define HEIGHT [UIScreen mainScreen].bounds.size.height
+
+    #define documents [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+
+    #define IMAGE_VIEW_TAG 1000
+    #define VIEW_TAG 999
+    #define TAGLabelName 998
+    #define TAGLabelCountry 997
+    #define TAGLabelLike 996
+    #define TAGStars 995
+    #define TAGColor 994
+
+#define KEY @"Sk2UaoUiLxLV5Z"
+    
+
+#endif
+
+
